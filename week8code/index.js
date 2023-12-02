@@ -19,14 +19,6 @@ class Cart {
       this.book = book;
       this.cart = [];
    }
-
-   // addBookToCart(book) {
-   //    if (book instanceof Book) {
-   //       this.cart.push(book);
-   //    } else {
-   //       throw new Error ("Only add books. Argument is not a book.");
-   //    }
-   // }
 }
 
    // add books to this list to save for later, buy later
@@ -34,19 +26,10 @@ class Cart {
 //    constructor(title,author) {
 //       super(title, author);
 //    }
-
-//    addBookToList(book) {
-//       if (book instanceof Book) {
-//          this.book.push(list);
-//       } else {
-//          throw new Error ("Only add books. Argument is not a book.");
-//       }
-//    }
 // }
 
 class Menu {
    constructor() {
-      // this.cart = [];
       // this.list = [];
       this.selectedCart = null;
       // this.selectedList = null;
@@ -94,7 +77,7 @@ class Menu {
          `);
    }
 
-   addBooksToCart () {
+   addBookToCart () {
       // let cartName = prompt ("Enter the name of your book cart:");
       let book = prompt("Enter title of the book you want to add to cart:");
       this.selectedCart.push(new Cart(book));
@@ -110,17 +93,10 @@ class Menu {
    viewBooksInCart() {
       let cartString ="";
       for (let i=0; i<this.cart.length; i++) {
-         cartString += i+ ")"+this.cart[i].title+'\n';
+         cartString += i+this.cart[i].book+'\n';
       }
       alert(cartString);
    }
-
-   // viewBooksInCart() {
-   //    if (index >-1 $$ index <this.cart.length) {
-   //       this.selectedCart = this.cart[index];
-   //       let description = "Books in Cart: " + this.selectedCart.title + "\n";
-   //    }
-   // }
 }
 
 let menu = new Menu();
